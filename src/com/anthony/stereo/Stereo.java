@@ -12,12 +12,16 @@ public class Stereo {
         this.room = room;
     }
 
-    public void on(){
-        System.out.println("Stereo On!");
+    public String on(){
+        String returnString = String.format("%s stereo on!",this.room);
+        System.out.println(returnString);
+        return returnString;
     }
 
-    public void off(){
-        System.out.println("Stereo off!");
+    public String off(){
+        String returnString = String.format("%s stereo off!",this.room);
+        System.out.println(returnString);
+        return returnString;
     }
 
     public Cd getCd() {

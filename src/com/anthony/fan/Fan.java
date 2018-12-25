@@ -8,11 +8,15 @@ public class Fan {
         this.room = room;
     }
 
-    public void on(){
-        System.out.println(String.format("Fan %s on!",this.room));
+    public String on(){
+        String returnString=String.format("Fan %s on!",this.room);
+        System.out.println(returnString);
+        return returnString;
     }
 
-    public void off(){
-        System.out.println(String.format("Fan %s off",this.room));
+    public String off(){
+        String returnString=String.format("Fan %s off!",this.room);
+        System.out.println(returnString);
+        return returnString;
     }
 }

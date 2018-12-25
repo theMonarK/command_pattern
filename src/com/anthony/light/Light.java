@@ -11,9 +11,15 @@ public class Light {
 
     public void on() {
         System.out.println(String.format("%s light On!",this.room));
+        this.state=true;
     }
 
     public void off() {
         System.out.println(String.format("%s light Off!",this.room));
+        this.state=false;
+    }
+
+    public Boolean getState() {
+        return state;
     }
 }

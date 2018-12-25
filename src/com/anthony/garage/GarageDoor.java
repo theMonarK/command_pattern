@@ -36,4 +36,8 @@ public class GarageDoor {
     public void ligthOff(){
         System.out.println("Garage light off!");
     }
+
+    public Boolean getDoorIsOpen() {
+        return doorIsOpen;
+    }
 }
