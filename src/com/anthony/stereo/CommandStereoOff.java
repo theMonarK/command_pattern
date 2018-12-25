@@ -14,4 +14,9 @@ public class CommandStereoOff implements Command {
     public void execute() {
         this.stereo.off();
     }
+
+    @Override
+    public void cancel() {
+        this.stereo.on();
+    }
 }

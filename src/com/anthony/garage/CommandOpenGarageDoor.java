@@ -15,4 +15,11 @@ public class CommandOpenGarageDoor implements Command {
         this.garageDoor.openDoor();
         this.garageDoor.lightOn();
     }
+
+    @Override
+    public void cancel() {
+        this.garageDoor.closeDoor();
+    }
+
+
 }

@@ -4,6 +4,7 @@ public class Remote {
 
     Command[] remoteOnButton;
     Command[] remoteOffButton;
+    Command remoteCancelButton;
 
     public Remote() {
         this.remoteOffButton = new Command[7];
@@ -13,6 +14,7 @@ public class Remote {
             this.remoteOnButton[index]= new NoCommand();
             this.remoteOffButton[index] = new NoCommand();
         }
+        this.remoteCancelButton = new NoCommand();
     }
 
     public void setCommand(int cmdplace, Command commandOn, Command commandOff){
@@ -23,11 +25,18 @@ public class Remote {
     // Execute on button command
     public void commandOnButton(int cmdPlace){
         this.remoteOnButton[cmdPlace].execute();
+        this.remoteCancelButton = this.remoteOnButton[cmdPlace];
     }
 
     // Execute off button command
     public void commandOffButton(int cmdPlace){
         this.remoteOffButton[cmdPlace].execute();
+        this.remoteCancelButton = this.remoteOffButton[cmdPlace];
+    }
+
+    // Execute cancel button
+    public void cancelButton(int cmdPlace){
+        this.remoteCancelButton.cancel();
     }
 
     public String toString(){

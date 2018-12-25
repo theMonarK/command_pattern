@@ -20,4 +20,9 @@ public class CommandStereoOnWithCd implements Command {
         this.stereo.setCd(new Cd("Guns n' Roses","Appetite for destruction"));
         this.stereo.setVolume(11);
     }
+
+    @Override
+    public void cancel() {
+        this.stereo.off();
+    }
 }

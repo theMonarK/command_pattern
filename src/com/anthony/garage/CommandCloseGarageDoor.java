@@ -15,4 +15,9 @@ public class CommandCloseGarageDoor implements Command {
         this.garageDoor.ligthOff();
         this.garageDoor.closeDoor();
     }
+
+    @Override
+    public void cancel() {
+        this.garageDoor.closeDoor();
+    }
 }

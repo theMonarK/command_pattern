@@ -14,4 +14,9 @@ public class CommandFanOn implements Command {
     public void execute() {
         this.fan.on();
     }
+
+    @Override
+    public void cancel() {
+        this.fan.off();
+    }
 }

@@ -1,5 +1,6 @@
-package com.anthony.light;
+package test.com.anthony.light;
 
+import com.anthony.light.Light;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
