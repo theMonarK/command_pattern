@@ -8,6 +8,11 @@ public class Remote {
     public Remote() {
         this.remoteOffButton = new Command[7];
         this.remoteOnButton = new Command[7];
+        // Handle empty command with NoCommand
+        for (int index=0; index<this.remoteOnButton.length; index++) {
+            this.remoteOnButton[index]= new NoCommand();
+            this.remoteOffButton[index] = new NoCommand();
+        }
     }
 
     public void setCommand(int cmdplace, Command commandOn, Command commandOff){
@@ -15,10 +20,12 @@ public class Remote {
         this.remoteOffButton[cmdplace] = commandOff;
     }
 
+    // Execute on button command
     public void commandOnButton(int cmdPlace){
         this.remoteOnButton[cmdPlace].execute();
     }
 
+    // Execute off button command
     public void commandOffButton(int cmdPlace){
         this.remoteOffButton[cmdPlace].execute();
     }
