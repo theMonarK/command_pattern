@@ -9,7 +9,6 @@ import com.anthony.light.CommandLightOn;
 import com.anthony.light.Light;
 import com.anthony.garage.CommandOpenGarageDoor;
 import com.anthony.garage.GarageDoor;
-import com.anthony.stereo.Cd;
 import com.anthony.stereo.CommandStereoOff;
 import com.anthony.stereo.CommandStereoOnWithCd;
 import com.anthony.stereo.Stereo;
@@ -32,6 +31,12 @@ public class Main {
         CommandLightOn kitchenLightOn = new CommandLightOn(lightKitchen);
         CommandLightOff kitchenLightOff = new CommandLightOff(lightKitchen);
 
+        // Init lights command
+        Command[] lightOnGroup = {bedroomLightOn,kitchenLightOn};
+        Command[] lightOffGroup = {bedroomLightOff,kitchenLightOff};
+        Commands allLightsOn = new Commands(lightOnGroup);
+        Commands allLightsOff = new Commands(lightOffGroup);
+
         // Init stereo commands
         CommandStereoOnWithCd stereoBedroomOn = new CommandStereoOnWithCd(stereoBedroom);
         CommandStereoOff stereoBedroomOff = new CommandStereoOff(stereoBedroom);
@@ -50,6 +55,7 @@ public class Main {
         remote.setCommand(2,stereoBedroomOn,stereoBedroomOff);
         remote.setCommand(3,openGarageDoor,closeGarageDoor);
         remote.setCommand(4,bedroomFanOn,bedroomFanOff);
+        remote.setCommand(5,allLightsOn,allLightsOff);
 
         // Print all remote buttons
         System.out.println(remote);
@@ -65,6 +71,8 @@ public class Main {
         remote.commandOffButton(3);
         remote.commandOnButton(4);
         remote.commandOffButton(4);
+        remote.commandOnButton(5);
+        remote.commandOffButton(5);
 
     }
 }
