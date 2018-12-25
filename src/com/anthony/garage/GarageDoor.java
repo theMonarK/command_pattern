@@ -1,4 +1,4 @@
-package com.anthony;
+package com.anthony.garage;
 
 public class GarageDoor {
 
@@ -12,6 +12,7 @@ public class GarageDoor {
         if (!doorIsOpen) {
             System.out.println("Open garage door!");
             System.out.println("Garage door is open" );
+            doorIsOpen = true;
         }
     }
 
@@ -20,6 +21,7 @@ public class GarageDoor {
             System.out.println("Close garage door!");
             this.stop();
             System.out.println("Garage door is close");
+            doorIsOpen = false;
         }
     }
 

@@ -1,4 +1,6 @@
-package com.anthony;
+package com.anthony.garage;
+
+import com.anthony.Command;
 
 public class CommandOpenGarageDoor implements Command {
 

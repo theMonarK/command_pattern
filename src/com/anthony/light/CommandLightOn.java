@@ -1,10 +1,12 @@
-package com.anthony;
+package com.anthony.light;
+
+import com.anthony.Command;
 
 public class CommandLightOn implements Command {
 
     Light light;
 
-    public CommandLightOn(com.anthony.Light light) {
+    public CommandLightOn(Light light) {
         this.light = light;
     }
 
